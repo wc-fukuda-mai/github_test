@@ -1,0 +1,385 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>バナーアニメーション</title>
+<style>
+/*---------------------------------------
+.specialArea
+----------------------------------------*/
+.specialArea a {
+	padding: 0 0.66% 0 1.33%;
+	width: 100%;
+	display: block;
+	background: #ED3A69 url(/images/sp/detail/special_link.png) no-repeat 99.34% center;
+	background-size: 21.6% auto;
+	/*position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;*/
+	text-decoration: none;
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+.specialArea a span {
+	margin: 1.9% 0;
+	display: block;
+	color: #FFF;
+	font-size: 79%;
+	font-weight: bold;
+	font-family:"UD新ゴ DB";
+	font-feature-settings : "palt";
+	box-sizing: border-box;
+}
+
+.specialArea a span span {
+	margin: 0;
+	color: #FFFF4C;
+	font-size: 121%;
+	display: inline;
+	white-space: nowrap;
+}
+
+.specialArea.type1 a {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    transition: .25s linear;
+    -webkit-transition: .25s linear;
+}
+
+.specialArea.type1 a:before {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    left: -30%;
+    top: -50%;
+    content: "";
+    width: 40px;
+    height: 100px;
+    transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    background-image: linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.6) 50%,rgba(255,255,255,0) 100%);
+    background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,.6)),color-stop(100%,rgba(255,255,255,0)));
+    animation: shiny 4s infinite linear;
+    -webkit-animation: shiny 4s infinite linear;
+}
+
+@keyframes flash {
+	0%{
+		opacity: 0;
+	}
+	20%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes flash {
+	0%{
+		opacity: 0;
+	}
+	20%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+
+.specialArea.type2 a span span {
+	animation: flash 5s infinite;
+	-webkit-animation: flash 5s infinite;
+}
+@keyframes shiny {
+    0% {
+        left: -30%;
+    }
+    30% {
+        left: 120%;
+    }
+    100% {
+        left: 120%;
+    }
+}
+@-webkit-keyframes shiny {
+    0% {
+        left: -30%;
+    }
+    30% {
+        left: 120%;
+    }
+    100% {
+        left: 120%;
+    }
+}
+
+
+.specialArea.type3 a span {
+	animation: shadow 5s infinite;
+	-webkit-animation: shadow 5s infinite;
+}
+@keyframes shadow {
+    0% {
+        text-shadow: none; 
+    }
+    30% {
+        text-shadow: 2px 2px 3px #333; 
+    }
+    100% {
+        text-shadow: 2px 2px 3px #333; 
+    }
+}
+@-webkit-keyframes shadow {
+    0% {
+        text-shadow: none; 
+    }
+    30% {
+        text-shadow: 2px 2px 3px #333; 
+    }
+    100% {
+        text-shadow: 2px 2px 3px #333; 
+    }
+}
+
+
+.specialArea.type4 {
+	background-color: #ED3A69;
+}
+.specialArea.type4 a {
+	animation: lightSpeedIn 2s;
+	-webkit-animation: lightSpeedIn 2s;
+	animation-duration: 3s;
+	-webkit-animation-duration: 3s;
+}
+@-webkit-keyframes lightSpeedIn {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes lightSpeedIn {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+
+.specialArea.type5 a span span {
+	display: inline-block;
+	animation: pulse 1.5s infinite;
+	-webkit-animation: pulse 1.5s infinite;
+}
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+
+.specialArea.type6 {
+	position: relative;
+}
+.specialArea.type6:before {
+	content: '';
+	position: absolute;
+	border-top: #ED3A69 solid 6px;
+	border-bottom: #ED3A69 solid 6px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	animation: hvr-ripple-out 3s linear 0s infinite forwards;
+	-webkit-animation: hvr-ripple-out 3s linear 0s infinite forwards;
+}
+
+@-webkit-keyframes hvr-ripple-out {
+10% {
+	top: 12px;
+	right: 12px;
+	bottom: 12px;
+	left: 12px;
+	opacity: 0;
+}
+100% {
+	top: 12px;
+	right: 12px;
+	bottom: 12px;
+	left: 12px;
+	opacity: 0;
+}
+}
+@keyframes hvr-ripple-out {
+10% {
+	top: -12px;
+	right: -12px;
+	bottom: -12px;
+	left: -12px;
+	opacity: 0;
+}
+100% {
+	top: -12px;
+	right: -12px;
+	bottom: -12px;
+	left: -12px;
+	opacity: 0;
+}
+}
+
+.specialArea.type7 span span {
+	display: inline-block;
+	animation: bainn2 4s linear 0s infinite forwards;
+	-webkit-animation: bainn2 4s linear 0s infinite forwards;
+}
+@-webkit-keyframes bainn2 {
+	  0% { -webkit-transform: translateY(0); }
+	  5% { -webkit-transform: translateY(1px); }
+	 7% { -webkit-transform: translateY(-13px); }
+	 10% { -webkit-transform: translateY(0); }
+	 11% { -webkit-transform: translateY(-7px); }
+	 13% { -webkit-transform: translateY(0px); }
+	 14% { -webkit-transform: translateY(-2px); }
+	 15% { -webkit-transform: translateY(0); }
+	100% { -webkit-transform: translateY(0); }
+}
+@keyframes bainn2 {
+	  0% { transform: translateY(0); }
+	  5% { transform: translateY(1px); }
+	 7% { transform: translateY(-13px); }
+	 10% { transform: translateY(0); }
+	 11% { transform: translateY(-7px); }
+	 13% { transform: translateY(0px); }
+	 14% { transform: translateY(-2px); }
+	 15% { transform: translateY(0); }
+	100% { transform: translateY(0); }
+}
+.specialArea.type8 span span {
+	display: inline-block;
+	animation: boyo2 .7s linear 0s infinite forwards;
+	transform-origin: 50% 100%;
+}
+@keyframes boyo2 {
+	  0% { transform: scale(1,1); }
+	 30% { transform: scale(1.3,.8); }
+	 40% { transform: scale(1.3,.8); }
+	 50% { transform: scale(.95,1.08); }
+	 60% { transform: scale(1.15,.9); }
+	 70% { transform: scale(.98,1.02); }
+	100% { transform: scale(1,1); }
+}
+
+.specialArea.type9 {
+	background-color: #ED3A69;
+}
+.specialArea.type9 a {
+	-webkit-animation: spin 4s linear infinite;
+	animation: spin 4s linear infinite;
+}
+@-webkit-keyframes spin {
+	0% {-webkit-transform: rotateX(0deg);}
+	10% {-webkit-transform: rotateX(360deg);}
+	100% {-webkit-transform: rotateX(360deg);}
+}
+@keyframes spin {
+	0% {transform: rotateX(0deg);}
+	10% {transform: rotateX(360deg);}
+	100% {transform: rotateX(360deg);}
+}
+</style>
+</head>
+<a href="/insurance/" onclick="ga(\'send\',\'event\',\'privilege\',location.href,\'linkInsurance\');" target="_blank" class="privilege">入居後あんしん保障対象</a>
+<body>
+①shiny
+<aside class="specialArea type1"><a href="#" onclick="ga('send','event','privilege',location.href,'anshin-hoken');"><span>あんしん相談室経由で<span>ご見学</span>された方への<span>特典</span></span></a></aside>
+<br>②flash
+<aside class="specialArea type2"><a href="#" onclick="ga('send','event','privilege',location.href,'anshin-hoken');"><span>あんしん相談室経由で<span>ご見学</span>された方への<span>特典</span></span></a></aside>
+<br>③shadow
+<aside class="specialArea type3"><a href="#" onclick="ga('send','event','privilege',location.href,'anshin-hoken');"><span>あんしん相談室経由で<span>ご見学</span>された方への<span>特典</span></span></a></aside>
+<br>④lightSpeedIn　※リロード時のみ
+<aside class="specialArea type4"><a href="#" onclick="ga('send','event','privilege',location.href,'anshin-hoken');"><span>あんしん相談室経由で<span>ご見学</span>された方への<span>特典</span></span></a></aside>
+<br>⑤pulse
+<aside class="specialArea type5"><a href="#" onclick="ga('send','event','privilege',location.href,'anshin-hoken');"><span>あんしん相談室経由で<span>ご見学</span>された方への<span>特典</span></span></a></aside>
+<br>⑥hvr-ripple-out（ボツ）
+<br>⑦bainn2
+<aside class="specialArea type7"><a href="#" onclick="ga('send','event','privilege',location.href,'anshin-hoken');"><span>あんしん相談室経由で<span>ご見学</span>された方への<span>特典</span></span></a></aside>
+<br>⑧boyo2
+<aside class="specialArea type8"><a href="#" onclick="ga('send','event','privilege',location.href,'anshin-hoken');"><span>あんしん相談室経由で<span>ご見学</span>された方への<span>特典</span></span></a></aside>
+<br>⑨spin
+<aside class="specialArea type9"><a href="#" onclick="ga('send','event','privilege',location.href,'anshin-hoken');"><span>あんしん相談室経由で<span>ご見学</span>された方への<span>特典</span></span></a></aside>
+
+
+</body>
+</html>
